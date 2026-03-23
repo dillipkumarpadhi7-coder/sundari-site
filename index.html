@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px 0;
+      border: 4px solid white;
+    }
+    .gallery img {
+      width: 120px;
+      height: 120px;
+      margin: 10px;
+      border-radius: 15px;
+    }
+    button {
+      background: #fff;
+      color: #ff6b81;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #ff6b81;
+      color: #fff;
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.4em;
+    }
+    .heart {
+      position: fixed;
+      color: red;
+      animation: float 5s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+    .timer {
+      margin-top: 20px;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey My Love ❤️</h1>
+    <h2>My Dear <span id="name">[ସୁନ୍ଦରୀ ]</span> 💖</h2><img src="her-photo.jpg" alt="My Love">
+
+<p>
+  ତମେ ମୋର ସବୁଠୁ ଭଲ ସାଙ୍ଗ କିନ୍ତୁ ତମେ ମୋ ଠାରୁ କଣ ଆଶା କରୁଛ କୁହ  💕
+</p>
+
+<!-- Love Timer -->
+<div class="timer">
+  We have been together for 💘<br>
+  <span id="days"></span> days
+</div>
+
+<!-- Button -->
+<button onclick="showMessage()">Click Here 💌</button>
+
+<div id="message" class="hidden">
+  I Love You Forever ❤️🥺
+</div>
+
+<!-- Gallery -->
+<div class="gallery">
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+</div>
+
+<!-- Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+  </div>  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    // Love Timer (change date here)
+    const startDate = new Date("2023-01-01");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("days").innerText = days;
+
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }, 300);
+  </script></body>
+</html>
